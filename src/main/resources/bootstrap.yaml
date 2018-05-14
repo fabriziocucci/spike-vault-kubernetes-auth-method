@@ -1,0 +1,11 @@
+spring.application.name: spike-vault-kubernetes-auth-method
+management.endpoints.web.exposure.include: "*"
+
+spring.cloud.vault:
+    scheme: http
+    host: 192.168.99.1
+    port: 8200
+    authentication: KUBERNETES
+    kubernetes:
+        role: my-role
+        service-account-token-file: /var/run/secrets/kubernetes.io/serviceaccount/token
